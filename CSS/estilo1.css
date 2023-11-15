@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    ---negro:#000000;
+    ---azul:#0000ff;
+    --verde_oscuro:#040D12;
+    --verde:#183D3D;
+    --verde_claro:#5C8374;
+    --verde_clarito:#93B1A6;
+    --celeste: #add8e6;
+    --blanco:#ffffff;
+    --crimson:#dc143c;
+    --amarillo:#ffff00;
+    --rojo: #e03535;
+}
+html{/** Conversion a rem **/
+    height: 100%;
+}
+body{
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+.grid-container > *{
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 1rem;
+    text-align: center;
+}
+.header{
+    grid-area: header;
+    background-color: var(--verde_oscuro);
+}
+.navbar{
+    grid-area: navbar;
+    background-color: var(--verde);
+}
+.main{
+    grid-area: main;
+    background-color: var(--verde_claro);
+}
+.right{
+    grid-area: right;
+    background-color: var(--verde_clarito);
+}
+.footer{
+    grid-area: footer;
+    background-color: var(---negro);
+}
+.grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+    "header"
+    "navbar"
+    "main"
+    "right"
+    "footer";
+}
+
+@media(min-width:768px){
+    .grid-container{
+        grid-template-columns: auto 750px 750px;
+        grid-template-rows: 120px auto auto 200px;
+        grid-template-areas: 
+        "header header header"
+        "navbar main right"
+        "navbar main right"
+        "footer footer footer";
+    }
+}
+.header{
+    display: flex;
+    flex-direction: column;
+}
+.header a{
+    font-family: 'Edu TAS Beginner', cursive;
+    padding: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-weight: 900;
+}
+.header a:hover{
+    background-color: var(--crimson);
+}
+@media(min-width:768px){
+    .header{
+        flex-direction: row;
+        justify-content: space-around;
+
+    }
+}
+.navbar > div{
+    height: 100px;
+    width: 30px;
+}
+.navbar > ul, .navbar > ol{
+    list-style: none;
+}
+.navbar{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Edu TAS Beginner', cursive;
+    color: var(--blanco);
+    font-size: 1.5rem;
+}
+.navbar  span{
+    color: var(--celeste);
+}
+.navbar p{
+    display: none;
+}
+.navbar p, .navbar h2{
+    margin: 0.5rem;
+}
+.navbar p:target{
+    background-color: cadetblue;
+    display: block;
+}
+.main, .right{
+    color: var(--blanco);
+    font-family: 'Edu TAS Beginner', cursive;
+    font-size: 1.3rem;
+}
+.main > ul, .right > ul{
+    list-style: none;
+}
+.main span, .right span{
+    color: var(--rojo);
+}
+.content-img{
+    width: 400px;
+    margin: 15px auto;
+    position: relative;
+    overflow: hidden;
+}
+.content-img img{
+    width: 100%;
+    height: auto;
+    transition: all 0.5s;
+}
+.content-img:hover img{
+    transform: scale(1.09);
+}
+.content-img .info-messi{
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    text-align: justify;
+    height: 100%;
+    box-sizing: border-box;
+}
+.content-img h3{
+    text-align: center;
+    font-size: 2.5rem;
+    border-bottom: 0.1rem solid var(--celeste);
+}
+.content-img p{
+    padding: 0 2rem 1.5rem 2rem;
+    border-bottom: 0.1rem solid var(--celeste);
+}
+.content-img:hover .info-messi{
+    top: 0;
+}
+.content-imgcr7{  /** img cr7**/
+    width: 400px;
+    margin: 15px auto;
+    position: relative;
+    overflow: hidden;
+}
+.content-imgcr7 img{
+    width: 100%;
+    height: auto;
+    transition: all 0.5s;
+}
+.content-imgcr7:hover img{
+    transform: scale(1.09);
+}
+.content-imgcr7 .info-cr7{
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    text-align: justify;
+    height: 100%;
+    box-sizing: border-box;
+}
+.content-imgcr7 h3{
+    text-align: center;
+    font-size: 2.5rem;
+    border-bottom: 0.1rem solid var(--celeste);
+}
+.content-imgcr7 p{
+    padding: 0 2rem 1.5rem 2rem;
+    border-bottom: 0.1rem solid var(--celeste);
+}
+.content-imgcr7:hover .info-cr7{
+    top: 0;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--blanco);
+}
+.footer a{
+    font-family: 'Edu TAS Beginner', cursive;
+}
+.footer a:focus{
+    background-color: var(--celeste);
+}
+@media (min-width:768px){
+    .footer{
+        flex-direction: row;
+        justify-content: space-around;
+
+    }
+}
+.color_whats{/**Color de los iconos de las redes sociales**/
+    color: var(--verde);
+}
+.color_insta{
+    color:var(--crimson);
+}
+.color_tele{
+    color: var(--azul);
+}
+a{/** Quitamos la raya azul de los links de las redes sociales, email**/
+    text-decoration: none;
+    color: var(--blanco);
+}
+.color_insta, .color_whats, .color_tele{/**Tamaño de los iconos de las redes sociales**/
+    width: 3rem;
+    height: 3rem;
+    margin-top: 2rem;
+}
+
