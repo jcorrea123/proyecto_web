@@ -155,6 +155,7 @@ body{
 .contenedor_cr7{
     width: 700px;
     margin: 15px auto;
+    place-content: center;
     font-family: arial;
     position: relative;
     overflow: hidden;
@@ -190,6 +191,18 @@ body{
 .contenedor_cr7:hover .content_cr7{
     top: 0;
 }
+@media(max-width:768){
+    .contenedor_cr7{
+        width: 200px;
+        margin: 15px auto;
+    }
+}
+@media(max-width:768){
+    .contenedor_cr7 img{
+        width: 100%;
+        height: auto;
+    }
+}
 .row{
     width: 100%;
     max-width: 1170px;
@@ -223,8 +236,7 @@ body{
     padding: 1rem;
 }
 .row .right{
-    display: flex;
-    align-items: center;
+    padding-left: 3rem;
 }
 .row .right .content{
     padding-left: 20px;
@@ -241,41 +253,50 @@ body{
 }
 @media (max-width: 768px){
     .row{
-        width: 90%;
+        width: 80%;
+        place-content: center;
+        margin: auto;
         grid-template-columns: 1fr;
     }
 }
-.row .right1{
+.row1{
+    width: 100%;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px 30px;
+}
+.row1 .right1{
     overflow: hidden;
 }
-.row .right1 img{
+.row1 .right1 img{
     width: 100%;
     height: 100%;
     object-fit:contain ;
     padding: 2.5rem;
 }
 
-.row .left1{
-    display: flex;
-    align-items: center;
+.row1 .left1{
     padding-left: 3rem;
 }
-.row .left1 .content{
+.row1 .left1 .content{
     padding-left: 20px;
 }
-.row .left1 .content{
+.row1 .left1 .content{
     font-size: 16px;
     line-height: 26px;
     padding-bottom: 15px;
 }
 @media (max-width: 768px){
-    .row .left1 .content{
+    .row1 .left1 .content{
         padding-left: 0;
     }
 }
 @media (max-width: 768px){
-    .row{
-        width: 90%;
+    .row1{
+        width: 60%;
+        place-items: center;
+        margin: auto;
         grid-template-columns: 1fr;
     }
 }
@@ -286,6 +307,7 @@ footer{
 }
 .logos{
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
 }
 .logos>a{
@@ -297,3 +319,10 @@ footer{
     font-size: 1.5rem;
     margin: 2rem;
 }
+@media(max-width:768px){
+    .logos, .a_lg{
+        flex-direction: column;
+        width: 30rem;
+    }
+}
+
