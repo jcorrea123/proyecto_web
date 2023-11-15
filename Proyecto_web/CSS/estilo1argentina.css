@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    
+    --amarillogod:#cfd185;
+    --celeste: #add8e6;
+    --blanco:#ffffff;
+    --crimson:#dc143c;
+    --azularg:#75AADB;
+}
+html{/** Conversion a rem **/
+    height: 100%;
+}
+body{
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+.grid-container > *{
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 1rem;
+    text-align: center;
+}
+.header{
+    grid-area: header;
+    background-color: var(--verde_oscuro);
+}
+
+
+.main{
+    grid-area: main;
+    background-color: var(--verde_claro);
+}
+.right{
+    grid-area: right;
+    background-color: var(--amarillogod);
+}
+.footer{
+    grid-area: footer;
+    background-color: var(---azularg);
+}
+.grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+    "header"
+    "navbar"
+    "main"
+    "right"
+    "footer";
+}
+
+@media(min-width:768px){
+    .grid-container{
+        grid-template-columns: auto 800px 800px;
+        grid-template-rows: 200px auto auto 200px;
+        grid-template-areas: 
+        "header header header"
+        "navbar main right"
+        "navbar main right"
+        "footer footer footer";
+    }
+}
+.header{
+    color: var(--blanco);
+}
+
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--blanco);
+}
+@media (min-width:768px){
+    .footer{
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+/*Carrusel*/
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.slide {
+    display: none;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.slide-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.slide:hover .slide-info {
+    opacity: 1;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.next {
+    right: 0;
+}
+
+.prev {
+    left: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: #ddd;
+}
+
+.slide-navigation {
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.active-dot {
+    background-color: #333;
+}
+
+
+
+
+.header {
+    background-color: #75AADB; /* Color celeste de la bandera argentina */
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.header > h1 {
+    color: #fff; /* Color blanco para el texto */
+    font-size: 20px; 
+    margin: 0;
+    font-family:'Nabla', cursive;
+}
+
+.header p {
+    color: #fff; /* Color blanco para el texto */
+    font-size: 18px; 
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, #75AADB, #fff, #75AADB); /* Gradiente celeste */
+    background-size: 300% 100%; /* Ancho del gradiente */
+    animation: animateBackground 15s linear infinite;
+}
+
+@keyframes animateBackground {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+.content {
+    text-align: center;
+    padding: 100px;
+}
+
+
+
+
+
+.message {
+    display: none;
+    background-color: #000000;
+    color: #fff; /* Color blanco para el texto */
+    padding: 20px;
+    margin: 100px;
+}
+
+a:focus + .message,
+a:target + .message {
+    display: block;
+}
