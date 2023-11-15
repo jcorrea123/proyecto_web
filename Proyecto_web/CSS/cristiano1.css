@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    ---negro:#000000;
+    ---azul:#0000ff;
+}
+html{/** Conversion a rem **/
+    height: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: white;
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+}
+.header{
+    padding: 20px;
+}
+.container{
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.hero{
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.473), rgba(0, 0, 0, 0.527)),
+    url('https://images8.alphacoders.com/476/thumb-1920-476725.jpg'); 
+    transform: translate3d(0px, -9px, 0px);
+    background-size: cover;
+    min-height: 500px;
+    height: 100vh;
+    color: #000000;
+}
+
+.nav{
+    --state-close: scale(0);
+    --state-hamburguer:scale(1);
+    --state-menu: translate(-100%);
+
+    padding: 40px 0;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: repeat(2, max-content);
+}
+
+.nav:target{
+    --state-menu: translate(0);
+    --state-close: scale(1);
+    --state-hamburguer:scale(0);
+}
+
+.nav__logo{
+    font-size: 2.5rem;
+    z-index: 1;
+}
+
+.nav__hamburguer, .nav__close{
+    cursor: pointer;
+    grid-column: -2/-1;
+    grid-row: 1/2;
+    transition: .4s transform;
+}
+
+.nav__hamburguer{
+    transform: var(--state-hamburguer);
+}
+
+.nav__close{
+    transform: var(--state-close);
+}
+
+.nav__icon{
+    width: 40px;
+}
+
+.nav__links{
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+
+    display: grid;
+    align-content: center;
+    gap: 2em;
+    padding-left: 5%;
+
+    transform: var(--state-menu);
+    transition: .3s transform;
+}
+
+.nav__item{
+    list-style: none;
+}
+
+.nav__link{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+@media (min-width:768px) {
+    .nav{
+        --state-hamburguer:scale(0);
+        --state-menu: translate(0);
+    }
+    
+    .nav:target{
+        --state-close: scale(0);
+    }
+
+    .nav__links{
+        padding: 0;
+        background-color: unset;
+        position: unset;
+        gap: 1.5em;
+        grid-auto-flow: column;
+    
+        transform: unset;
+
+        grid-column: -2/-1;
+        grid-row: 1/2;
+    }
+
+    .nav__link{
+        font-size: 1rem;
+        letter-spacing: none;
+    }
+}
+.int{
+    width: auto;
+    height: 24rem;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+.desc{
+    margin: 4px;
+    color: #ffff;
+    font-family: 'Bebas neue', sans-serif; font-size: 35px;
+}
+.contenedor_cr7{
+    width: 700px;
+    margin: 15px auto;
+    font-family: arial;
+    position: relative;
+    overflow: hidden;
+}
+.contenedor_cr7 img{
+    width: 100%;
+    height: auto;
+    transition: all .5s;
+}
+.contenedor_cr7:hover img{
+    transform: scale(1.09);
+}
+.contenedor_cr7 .content_cr7{
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    text-align: justify;
+    height: 100%;
+    color: #fff;
+    box-sizing: border-box;
+}
+.content_cr7 h4{
+    text-align: center;
+    font-size: 2.5rem;
+    border-bottom: 1px solid #808080;
+    padding: 0 1rem 2rem 1rem;
+}
+.contenedor_cr7 p{
+    padding: 0 2rem 1.5rem 2rem;
+    border-bottom: 0.1rem solid #808080;
+}
+.contenedor_cr7:hover .content_cr7{
+    top: 0;
+}
+.row{
+    width: 100%;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px 30px;
+}
+.row .left{
+    overflow: hidden;
+}
+.row .left img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 2.5rem;
+}
+.cr7title{
+    font-size: 2rem;
+    padding: 1rem;
+}
+.desccr7{
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+.cr7title2{
+    font-size: 2rem;
+    padding: 1rem;
+}
+.desccr72{
+    font-size: 1.3rem;
+    padding: 1rem;
+}
+.row .right{
+    display: flex;
+    align-items: center;
+}
+.row .right .content{
+    padding-left: 20px;
+}
+.row .right .content{
+    font-size: 16px;
+    line-height: 26px;
+    padding-bottom: 15px;
+}
+@media (max-width: 768px){
+    .row .right .content{
+        padding-left: 0;
+    }
+}
+@media (max-width: 768px){
+    .row{
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}
+.row .right1{
+    overflow: hidden;
+}
+.row .right1 img{
+    width: 100%;
+    height: 100%;
+    object-fit:contain ;
+    padding: 2.5rem;
+}
+
+.row .left1{
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+}
+.row .left1 .content{
+    padding-left: 20px;
+}
+.row .left1 .content{
+    font-size: 16px;
+    line-height: 26px;
+    padding-bottom: 15px;
+}
+@media (max-width: 768px){
+    .row .left1 .content{
+        padding-left: 0;
+    }
+}
+@media (max-width: 768px){
+    .row{
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}
+footer{
+    background-color: white;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.473), rgba(0, 0, 0, 0.527)),
+    url('https://static.wikia.nocookie.net/omori/images/f/f4/MIRROR_AREA.png/revision/latest?cb=20210213075813');
+}
+.logos{
+    display: flex;
+    justify-content: space-around;
+}
+.logos>a{
+    display: flex;
+    align-items: center;
+    font-family: 'Bebas Neue', sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 2rem;
+}
