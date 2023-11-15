@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Gustavo Espinoza Poblete ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <link rel="stylesheet" href="css/estilo1argentina.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
+</head>
+<body class="grid-container">
+    <div class="header">
+   
+        <p>Bienvenido a la biografia de: ¡Lionel Andrés Messi Cuccittini!</p>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar a:not(:first-child) {display: none;}
+            .navbar a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar.responsive {position: relative;}
+            .navbar.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .navbar.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar" id="myNavbar">
+    <a href="index.html">Inicio</a>
+    <a href="index1argentina.html">Lionel Andrés Messi Cuccittini (PAGINA ACTUAL)</a>
+    <a href="cristiano.html">Cristiano Ronaldo dos Santos Aveiro</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myNavbar");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
+        }
+    }
+</script>
+
+
+
+
+    <div class="main">
+
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="IMG/messi1.jpg" alt="Messi 1">
+                <div class="slide-info">
+                    <p>(Lionel Andrés Messi; Rosario, Santa Fe, 1987) Futbolista argentino. Poseedor de una habilidad técnica excepcional, una endiablada velocidad y una inventiva inagotable, desde que llegó de la mano de sus padres al F.C. Barcelona, con 13 años de edad, realizó una carrera vertiginosa por las diferentes categorías hasta el primer equipo, en el que debutó con apenas 16 años en un partido amistoso ante el Oporto. En 2004, con 17 años, Leo Messi jugó su primer encuentro oficial de la Liga española. Con 18 años le llegó su consagración internacional: formó parte de la selección argentina, campeona en el Mundial Juvenil Sub-20 de Holanda, disputado en 2005.</p>
+                </div>
+            </div>
+        
+            <div class="slide">
+                <img src="IMG/messi2.jpg" alt="Messi 2">
+                <div class="slide-info">
+                    <p>
+                        Lionel Messi es considerado uno de los mejores futbolistas del mundo, y su éxito en este deporte lo demuestra. Con su equipo, el Barcelona, ha ganado un total de 34 títulos, incluyendo 10 Ligas españolas y 4 Ligas de Campeones de la UEFA. Además, con la Selección Argentina ha conseguido 1 medalla de oro en los Juegos Olímpicos de Beijing 2008, y también ha llegado a la final de la Copa del Mundo en 2014 y la Copa América en varias ocasiones, aunque sin poder conseguirlas. Sin lugar a dudas, los logros deportivos de Lionel Messi le han llevado a ser uno de los futbolistas mejor pagados del mundo.
+                    </p>
+                </div>
+            </div>
+        
+            <div class="slide">
+                <img src="IMG/messi3.jpg" alt="Messi 3">
+                <div class="slide-info">
+                    <p>Lionel Messi es considerado uno de los mejores futbolistas del mundo, y su éxito en este deporte lo demuestra. Con su equipo, el Barcelona, ha ganado un total de 34 títulos, incluyendo 10 Ligas españolas y 4 Ligas de Campeones de la UEFA. Además, con la Selección Argentina ha conseguido 1 medalla de oro en los Juegos Olímpicos de Beijing 2008, y también ha llegado a la final de la Copa del Mundo en 2014 y la Copa América en varias ocasiones, aunque sin poder conseguirlas. Sin lugar a dudas, los logros deportivos de Lionel Messi le han llevado a ser uno de los futbolistas mejor pagados del mundo.</p>
+                </div>
+            </div>
+        
+            <button class="prev" onclick="changeSlide(-1)">Anterior</button>
+            <button class="next" onclick="changeSlide(1)">Siguiente</button>
+        </div>
+        
+        <div class="slide-navigation" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        
+       
+    </div>
+
+    <script>
+        let currentSlideIndex = 1;
+        showSlide(currentSlideIndex);
+    
+        function changeSlide(n) {
+            showSlide(currentSlideIndex += n);
+        }
+    
+        function currentSlide(n) {
+            showSlide(currentSlideIndex = n);
+        }
+    
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+    
+            if (n > slides.length) {
+                currentSlideIndex = 1;
+            }
+            if (n < 1) {
+                currentSlideIndex = slides.length;
+            }
+    
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+    
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+    
+            slides[currentSlideIndex - 1].style.display = "block";
+            dots[currentSlideIndex - 1].className += " active-dot";
+        }
+    </script>
+    
+
+
+    <div class="right">
+        <p>En 2009, a los veintidós años, ganó su primer Balón de Oro y el premio al Jugador Mundial de la FIFA del año. Siguieron tres temporadas exitosas, en las que ganó cuatro Balones de Oro de forma consecutiva, hecho que no tenía precedentes. Hasta el momento, su mejor campaña personal es la temporada 2011-12, en la que estableció el récord de más goles en una temporada, tanto en La Liga como en otras competiciones europeas. Durante las dos siguientes temporadas, también sufrió lesiones y, en 2014, perdió el Balón de Oro frente a Cristiano Ronaldo, a quien se considera su rival. Recuperó su mejor forma durante la campaña 2014-15, en la que superó los registros de máximo goleador absoluto en La Liga y la Liga de Campeones y logró con el Barcelona un histórico segundo triplete, además de ganar su quinto Balón de Oro. Volvería a ganarlo por sexta y séptima vez en 2019 y 2021.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/PSanJ5swYBM?si=QsMWi8Cqa3FCauuo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen autoplay></iframe>
+    ​</div>
+   
+    <div class="footer">
+
+        <a href="https://www.instagram.com/leomessi/">
+            <svg class="color_insta" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+            </svg> Instagram</a>
+
+            <a href="#showMessage">MostrarGolesTotales</a>
+            <div class="message" id="showMessage">785</div>
+    </div>
+
+</body>
+</html>
