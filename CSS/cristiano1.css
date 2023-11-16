@@ -7,8 +7,9 @@
     ---negro:#000000;
     ---azul:#0000ff;
 }
-html{/** Conversion a rem **/
+html{
     height: 100%;
+    font-size: 62.5%;
 }
 body{
     margin: 0;
@@ -19,39 +20,36 @@ body{
     width: 100%;
     display: grid;
 }
-.header{
-    padding: 20px;
-}
 .container{
     margin: 0 auto;
-    width: 90%;
     max-width: 1200px;
-    overflow: hidden;
 }
-
 .hero{
     background-image: 
     linear-gradient(rgba(0, 0, 0, 0.473), rgba(0, 0, 0, 0.527)),
     url('https://images8.alphacoders.com/476/thumb-1920-476725.jpg'); 
     transform: translate3d(0px, -9px, 0px);
     background-size: cover;
-    min-height: 500px;
     height: 100vh;
+    width: 100%;
     color: #000000;
 }
-
+@media(max-width:768px){
+    .hero{
+        background-size: 100% 100%;
+    }
+}
 .nav{
     --state-close: scale(0);
     --state-hamburguer:scale(1);
     --state-menu: translate(-100%);
 
-    padding: 40px 0;
+    padding: 4rem 0;
     display: grid;
     justify-content: space-between;
     align-items: center;
     grid-template-columns: repeat(2, max-content);
 }
-
 .nav:target{
     --state-menu: translate(0);
     --state-close: scale(1);
@@ -147,10 +145,27 @@ body{
     align-items: center;
     flex-direction: column;
 }
+.Title img{
+    width: 60rem;
+    height: 10rem;
+}
+@media(max-width:768px){
+    .Title img{
+        width: 40rem;
+        height: 7rem;
+    }
+}
 .desc{
     margin: 4px;
     color: #ffff;
     font-family: 'Bebas neue', sans-serif; font-size: 35px;
+}
+@media(max-width:768px){
+    .desc{
+        margin: 4px;
+        color: #ffff;
+        font-family: 'Bebas neue', sans-serif; font-size: 3rem;
+    }
 }
 .contenedor_cr7{
     width: 700px;
@@ -180,27 +195,35 @@ body{
 }
 .content_cr7 h4{
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     border-bottom: 1px solid #808080;
     padding: 0 1rem 2rem 1rem;
 }
 .contenedor_cr7 p{
+    font-size: 2.5rem;
     padding: 0 2rem 1.5rem 2rem;
     border-bottom: 0.1rem solid #808080;
 }
 .contenedor_cr7:hover .content_cr7{
     top: 0;
 }
-@media(max-width:768){
+@media(max-width:768px){
     .contenedor_cr7{
-        width: 200px;
+        width: 500px;
         margin: 15px auto;
     }
 }
-@media(max-width:768){
+@media(max-width:768px){
     .contenedor_cr7 img{
         width: 100%;
         height: auto;
+    }
+}
+@media(max-width:768px){
+    .contenedor_cr7 p{
+        width: 500px;
+        font-size: 1.7rem;
+        margin: 15px auto;
     }
 }
 .row{
@@ -220,20 +243,40 @@ body{
     padding: 2.5rem;
 }
 .cr7title{
-    font-size: 2rem;
+    font-size: 3rem;
     padding: 1rem;
 }
 .desccr7{
-    font-size: 1.5rem;
-    padding: 1rem;
-}
-.cr7title2{
     font-size: 2rem;
     padding: 1rem;
 }
-.desccr72{
-    font-size: 1.3rem;
+@media(max-width:768px){
+    .cr7title{
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+    .desccr7{
+        font-size: 2rem;
+        padding: 1rem;
+    }
+}
+.cr7title2{
+    font-size: 3rem;
     padding: 1rem;
+}
+.desccr72{
+    font-size: 2rem;
+    padding: 1rem;
+}
+@media(max-width:768px){
+    .cr7title2{
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+    .desccr72{
+        font-size: 2rem;
+        padding: 1rem;
+    }
 }
 .row .right{
     padding-left: 3rem;
@@ -310,7 +353,7 @@ footer{
     flex-direction: row;
     justify-content: space-around;
 }
-.logos>a{
+.logos>.a_lg{
     display: flex;
     align-items: center;
     font-family: 'Bebas Neue', sans-serif;
@@ -321,8 +364,8 @@ footer{
 }
 @media(max-width:768px){
     .logos, .a_lg{
+        margin: auto;
+        justify-content: center;
         flex-direction: column;
-        width: 30rem;
     }
 }
-
